@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ menu.name }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        a {
+            display: inline-block;
+            margin-top: 20px;
+            text-decoration: none;
+            color: white;
+            background-color: #007bff;
+            padding: 8px 12px;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ menu.name }}</h1>
+    <p><strong>Price:</strong> ${{ menu.price }}</p>
+    <a href="{% url 'list_menu' %}">← Back to Menu List</a>
+</body>
+
+</html>

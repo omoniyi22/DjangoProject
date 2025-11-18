@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Create Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 30px auto;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .back-link {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .back-link a {
+            text-decoration: none;
+            color: #007bff;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create Menu</h1>
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="name" placeholder="Menu name" required>
+        <input type="number" name="price" step="0.01" placeholder="Menu price" required>
+        <button type="submit">Add Menu</button>
+    </form>
+
+    <div class="back-link">
+        <a href="{% url 'list_menu' %}">← Back to Menu List</a>
+    </div>
+</body>
+
+</html>
